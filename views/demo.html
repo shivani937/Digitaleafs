@@ -1,0 +1,762 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css">
+<script src="https://kit.fontawesome.com/d0b1e3b290.js"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap"
+        rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.1/css/bootstrap.min.css">
+</head>
+<style>
+    body{
+    background: #eaeef3;
+}
+        * {
+    margin: 0px;
+    padding: 0px;
+}
+
+.preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #fff;
+    z-index: 9999;
+}
+
+.load-icon {
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.inner-header {
+    width: 95%;
+    margin: 0px auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 0px;
+}
+.header-posi{
+    width: 100%;
+    background-color: #fff;
+    top: -200px;
+    transition: 0.5s;
+    z-index: 100;
+    box-shadow: 0 3px 6px 0 rgb(25 25 25 / 50%);
+}
+.header-posi.active {
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+.max-width-header {
+    width: 80%;
+    margin: 0px auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo img {
+    width: 170px;
+    margin: 10px 0px;
+}
+
+.max-width-header ul {
+    display: flex;
+}
+
+.max-width-header ul li {
+    list-style: none;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.max-width-header ul li a {
+    text-decoration: none;
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #85c445;
+    border-bottom: 1px solid transparent;
+    font-weight: bold;
+    padding-bottom: 5px;
+}
+dl, ol, ul {
+    margin-top: 0;
+    margin-bottom: 0px !important; 
+}
+.menu-basic-all.menu-btn-login {
+    display: inline-block;
+    text-align: center;
+    line-height: 1;
+    cursor: pointer;
+    -webkit-appearance: none;
+    transition: background-color .25s ease-out, color .25s ease-out;
+    vertical-align: middle;
+    border-radius: 2em;
+    padding: 0px 0px;
+    padding-bottom: 6px;
+    margin: 0 0 0px;
+    font-size: 1rem;
+    background-color: #85c445;
+    border: 1px solid #a4ea5d;
+    margin-right: 0;
+    font-weight: 700;
+    transition: all .2s ease-out;
+}
+
+.menu-basic-all.menu-btn-login a {
+    font-size: 16px;
+    color: #fff;
+    font-weight: bold;
+    letter-spacing: 0.8px;
+}
+.step__progressbar {
+    margin-top: 120px;
+}
+.step__bar ul {
+    list-style: none;
+    margin-bottom: 0;
+    text-align: center;
+    padding: 0;
+}
+.step__bar ul li {
+    display: inline-block;
+    width: 240px;
+    color: #85c249;
+    position: relative;
+    z-index: 10;
+}
+.step__bar ul li p {
+    font-size: 1rem;
+    font-weight: 500;
+}
+.step__bar ul li.active:nth-child(1) .s_icon, .step__bar ul li.active:nth-child(1) .s_icon::after, .step__bar ul li.active:nth-child(2) .s_icon, .step__bar ul li.active:nth-child(2) .s_icon::after, .step__bar ul li.active:nth-child(3) .s_icon, .step__bar ul li.active:nth-child(3) .s_icon::after, .step__bar ul li.active:nth-child(4) .s_icon, .step__bar ul li.active:nth-child(4) .s_icon::after, .step__bar ul li.active:nth-child(5) .s_icon, .step__bar ul li.active:nth-child(5) .s_icon::after {
+    background: #0c9;
+}
+.step__bar ul li:first-child .s_icon::after {
+    width: 120px;
+    left: 127px;
+}
+.step__bar ul li .s_icon::after {
+    content: "";
+    position: absolute;
+    display: block;
+    left: 0;
+    top: 52px;
+    width: 247px;
+    height: 5px;
+    border-radius: 20px;
+    background: #6c757d;
+    z-index: -1;
+}
+.step__bar ul li .s_icon {
+    width: 30px;
+    height: 30px;
+    background: #6c757d;
+    border-radius: 50%;
+    line-height: 30px;
+    text-align: center;
+    color: #fff;
+}
+.new__card {
+    width: 100%;
+    position: relative;
+}
+.card__backside {
+    background: #fff;
+    border-radius: 10px;
+    border: 1px solid #f2f2f2;
+    box-shadow: 0 2px 4px 0 rgb(0 0 0 / 8%);
+}
+.ncard__title {
+    padding: 11px 20px;
+    border-bottom: 1px dotted rgba(0, 0, 0, 0.2);
+    font-size: 1.35rem;
+    font-weight: 500;
+    color: #191919;
+    text-transform: capitalize;
+}
+.cardside__list ul {
+    list-style: none;
+    padding: 0;
+}
+.cardside__list ul li {
+    display: block;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #efefef;
+}
+.cardside__list ul li a {
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: rgba(0, 0, 0, 0.65);
+    display: block;
+}
+.cardside__list ul li a i {
+    margin-right: 1rem;
+}
+.card__back {
+    background: #fff;
+    border-radius: 10px;
+    transition: 0.5s;
+    border: 1px solid #f2f2f2;
+    box-shadow: 0 2px 4px 0 rgb(0 0 0 / 8%);
+}
+footer {
+    width: 100%;
+    background-color: #191919;
+}
+
+.footer-info {
+    display: flex;
+    padding: 40px 0px;
+    width: 80%;
+    margin: 0px auto;
+}
+
+
+
+.footer-info-presentation {
+    display: inline-block;
+    padding: 8px 0px;
+}
+
+.footer-info-presentation h6 {
+    color: #f5f5f5;
+    font-size: 25px;
+    margin-bottom: 21px;
+    font-weight: 600;
+}
+
+.footer-info-presentation ul {
+    padding: 0;
+    margin: 0;
+}
+
+
+
+.footer-info-presentation ul li a {
+    display: inline-block;
+    color: #f2f2f2;
+    display: inline-block;
+    font-weight: 100;
+    font-size: 20px;
+    padding-left: 0px;
+    text-decoration: none;
+}
+.footer-info-presentation ul li a:hover{
+    color: rgb(202, 116, 116);
+}
+.footer-info-presentation img {
+    width: 120px;
+}
+
+.footer-info-presentation p {
+    color: #f5f5f5;
+    font-size: 21px;
+    font-weight: 500;
+    padding: 15px;
+}
+
+div.left_img_wrap img {
+    width: 170px;
+}
+
+.last-footer {
+    background-color: rgb(17, 17, 17);
+    font-size: 0.75rem;
+    color: rgb(167, 167, 167);
+    padding: 1.25rem;
+}
+
+.last-footer h5 {
+    text-align: center;
+    font-size: 12px;
+}
+
+
+
+.last-footer ul li {
+    list-style: none;
+    font-weight:500;
+    font-size: 17px;
+    line-height: 1;
+    display: inline-block;
+    margin: 0px -5px;
+}
+
+.last-footer ul li a {
+    text-decoration: none;
+    display: inline-block;
+    font-size:13px;
+    color: rgb(167, 167, 167);
+    text-decoration: underline;
+    padding: 10px 20px;
+    align-items: center;
+}
+.last-footer ul li a:hover{
+    color: rgb(202, 116, 116);
+}
+
+
+
+
+footer {
+    background-color: #191919;
+}
+.footer-info {
+    display: flex;
+    padding: 45px 0px;
+    width: 100%;
+}
+.footer-info-presentation {
+    display: inline-block;
+}
+
+    .footer-info-presentation h4 {
+        color: #f5f5f5;
+        line-height:3;
+        font-size: 25px;
+        font-weight: 800;
+    }
+
+    .footer-info-presentation ul {
+        padding: 0;
+        margin: 0;
+    }
+
+.footer-info-presentation ul li {
+    list-style: none;
+    margin-bottom: 10px;
+}
+
+    .footer-info-presentation ul li span {
+        color: #fff;
+        font-size: 15px;
+        margin: 0px 5px;
+        font-weight: 500;
+    }
+
+.footer-info-presentation img {
+    width: 120px;
+}
+
+.footer-info-presentation p {
+    color: #f5f5f5;
+    font-size: 14px;
+    margin-top: 10px;
+    font-weight: 500;
+}
+
+div.left_img_wrap img {
+    width: 200px;
+    height: auto;
+    margin-top: 10px;
+    margin-bottom: 15px;
+}
+
+.last-footer {
+    background-color: rgb(17, 17, 17);
+    font-size: 18px;
+    color: #fff;
+    border-top: 1px solid #fff;
+    padding: 10px 0px;
+}
+
+    .last-footer p {
+        text-align: center;
+        color: rgb(167, 167, 167);
+        font-size: 15px;
+        font-weight: 400;
+    }
+    @media (max-width:1000px) {
+    .menu{
+       display: none;
+    }
+}
+@media (max-width:600px) {
+    .banner-text{
+        width: 100%;
+        padding: 50px 10px;
+    }
+    .banner-text h1{
+        font-size: 35px;
+    }
+    .banner-text p{
+        font-size: 20px;
+    }
+    .about-social-media-section img{
+ width: 300px;
+    }
+}
+</style>
+<body>
+    <div class="preloader">
+        <div class="load-icon">
+            <img src="../content/img/digitaleafs.gif">
+        </div>
+    </div>
+    
+<header>
+  <div class="header-posi">
+  <div class="max-width-header">
+      <div class="logo">
+          <img src="../content/img/logo.png">
+      </div>
+      <div class="menu">
+          <ul>
+            <li><a href="../views/index.html">Home</a></li>
+            <li><a href="../views/whydigitaleafs.html">Why Digital Leafs?</a></li>
+            <li><a href="../views/pricing.html">Princing</a></li>
+            <li><a href="../views/contact.html">Contact Us</a></li>
+            <li><a href="../views/demo.html">Demo</a></li>
+            <li class="menu-basic-all menu-btn-login">
+                <a href="../views/sign.html">Sign In</a>
+            </li>
+          </ul>
+      </div>
+  </div>
+  </div>
+</header>
+    <section class="step__progressbar d-none d-lg-block">
+        <div class="container-fluid">
+            <div class="step__bar">
+                <ul>
+                    <li class="active">
+                        <p>Basic Info</p>
+                        <i class="fas fa-sync s_icon"></i>
+                    </li>
+                    <li>
+                        <p>Company Details</p>
+                        <i class="fas fa-times s_icon"></i>
+                    </li>
+                    <li>
+                        <p>Services & Products</p>
+                        <i class="fas fa-times s_icon"></i></i>
+                    </li>
+                    <li>
+                        <p>Social Media </p>
+                        <i class="fas fa-times s_icon"></i>
+                    </li>
+                    <li>
+                        <p>Videos & Galleries</p>
+                        <i class="fas fa-times s_icon"></i>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <!--step progress bar section end here -->
+    <!--Form section start here -->
+    <section class="new__card my-5">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-2 col-12 pr-md-0">
+                    <div class="card__backside">
+                        <div class="ncard__title">my card</div>
+                        <div class="cardside__list p-3">
+                            <ul>
+
+                                <li>
+                                    <a href="https://digitaleafs.com/user/create-card" class="mycard-cls ">
+                                        <i class="fa fa-id-card"></i>
+                                        My Card
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="https://digitaleafs.com/user/my-plan" class="myplan-cls ">
+                                        <i class="fa fa-pencil-square-o"></i>
+                                        My Plan
+                                    </a>
+                                </li>
+
+
+                                <li>
+                                    <a href="https://digitaleafs.com/user/update-profile" class="myprofile-cls ">
+                                        <i class="fa fa-user-o"></i>
+                                        Update Profile
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="https://digitaleafs.com/user/change-password" class="mypassword-cls ">
+                                        <i class="fa fa-lock"></i>
+                                        Change Password
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://digitaleafs.com/user/my-leads" class="mypassword-cls ">
+                                        <i class="fa fa-lock"></i>
+                                        My Leads
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://digitaleafs.com/user/customize-theme" class="mypassword-cls ">
+                                        <i class="fa fa-pencil-square-o"></i>
+                                        Customize Theme
+                                    </a>
+                                </li>
+
+
+                                <li>
+                                    <a href="https://digitaleafs.com/logout" class="logout-cls">
+                                        <i class="fa fa-sign-out"></i>
+                                        Logout
+                                    </a>
+                                </li>
+
+
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-10 col-12">
+                    <div class="card__back">
+                        <div class="ncard__title">Basic Info</div>
+
+                        <form method="post" action="https://digitaleafs.com/user/user-basic-info"
+                            enctype="multipart/form-data" onsubmit="myLoader()">
+                            <input type="hidden" name="_token" value="WVC2QGpDdlvn4TZ6tXcJFk0NketjwqNpEWer0BRF"> <input
+                                type="hidden" class="form-control" name="plan" value="" readonly>
+                            <div class="ncard__form p-3">
+                                <div class="row">
+                                    <div class="form-group col-md-4 col-12">
+                                        <label>User Name <span class="req__color">*</span></label>
+                                        <input type="text" class="form-control" id="search"
+                                            placeholder="No Space Allowed" name="username" required="" value="">
+                                        <div id="display" class="text-danger"></div>
+                                    </div>
+                                    <div class="form-group col-md-4 col-12">
+                                        <label>Email <span class="req__color">*</span></label>
+                                        <input type="email" id="email" class="form-control" name="email"
+                                            placeholder="demo@gmail.com" required="" value="">
+                                        <div id="display_email" class="text-danger"></div>
+                                    </div>
+
+                                    <div class="form-group col-md-4 col-12">
+                                        <label>Password <span class="req__color">*</span></label>
+                                        <input type="password" class="form-control" name="password" placeholder="*****"
+                                            required="" value="">
+                                    </div>
+                                    <div class="form-group col-md-4 col-12">
+                                        <label>Full Name <span class="req__color">*</span></label>
+                                        <input type="text" class="form-control" name="fullname" placeholder="Your Name"
+                                            required="" value="">
+                                    </div>
+                                    <div class="form-group col-md-4 col-12">
+                                        <label>Job Title / Designation</label>
+                                        <input type="text" class="form-control" name="jobtitle"
+                                            placeholder="Founder/Software engineer/Accountant" value="">
+                                    </div>
+
+                                    <div
+                                        class="form-group col-md-4 col-12 d-flex align-items-end justify-content-between">
+                                        <div class="m__field">
+                                            <label>Mobile No <span class="req__color">*</span></label>
+                                            <input type="number" class="form-control" name="mobile[]"
+                                                placeholder="9899****50" required="">
+                                        </div>
+                                        <!-- <button class="btn btn-primary add_field_mobile" data-toggle="tooltip" data-placement="top" title="Add Mobile No"><i class="fa fa-plus"></i></button> -->
+                                        <button class="btn btn-primary add_field_mobile" data-toggle="tooltip"
+                                            data-placement="top" title="Add Mobile No"><i
+                                                class="fa fa-plus"></i></button>
+                                    </div>
+
+                                    <!--Mobile append field section start -->
+                                    <div class="col-12 mobile__append">
+                                        <div class="row">
+
+                                        </div>
+
+                                    </div>
+                                    <!--Mobile append field section end -->
+                                    <div class="col-12">
+                                        <div class="row">
+                                            <div class="col-md-6 col-12 website__append">
+                                                <div
+                                                    class="form-group col-12 d-flex align-items-end justify-content-between px-0">
+                                                    <div class="m__field">
+                                                        <label>Website URL</label>
+                                                        <input type="text" class="form-control" name="websiteurl[]"
+                                                            placeholder="http://www.demo.com">
+                                                    </div>
+                                                    <!-- <button class="btn btn-primary" data-toggle="tooltip" data-placement="top" title="Add Website URL"><i class="fa fa-plus"></i></button> -->
+                                                    <button class="btn btn-primary add_field_website"><i
+                                                            class="fa fa-plus" data-toggle="tooltip"
+                                                            data-placement="top" title="Add Website URL"></i></button>
+                                                </div>
+
+                                            </div>
+                                            <div class="col-md-6 col-12 address__append">
+                                                <div
+                                                    class="form-group col-12 d-flex align-items-end justify-content-between px-0">
+                                                    <div class="m__field">
+                                                        <label>Address</label>
+                                                        <input type="text" class="form-control" name="address[]"
+                                                            placeholder="Your Address" autocomplete="off">
+                                                    </div>
+                                                    <!-- <button class="btn btn-primary" data-toggle="tooltip" data-placement="top" title="Add Address"><i class="fa fa-plus"></i></button> -->
+                                                    <button class="btn btn-primary add_field_address"
+                                                        data-toggle="tooltip" data-placement="top"
+                                                        title="Add Address"><i class="fa fa-plus"></i></button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="divLoading" style="display:none;">
+                                    <img src="https://digitaleafs.com/public/assets/images/digitaleafs.gif"
+                                        alt="digitaleaf loader">
+                                </div>
+                                <div class="ncard__button">
+                                    <div class="card__nextbtn text-right">
+                                        <button class="btn btn-success text-uppercase" id="btnSubmit" type="submit">Save
+                                            & Continue </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <div class="footer-info">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-6 col-md-3">
+                        <div class="footer-info-presentation">
+                            <div class="left_img_wrap">
+                                <img src="../content/img/logo-footer-digital-leaf.png">
+                                <p>is part of</p>
+                                <img src="https://digitaleafs.com/public/assets/images/digital-web-developers.png">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-3">
+                        <div class="footer-info-presentation">
+                            <h4>Learn More</h4>
+                            <ul>
+                                <li>
+                                    <a href="#">About Us</a>
+                                </li>
+                                <li>
+                                    <a href="../views/whydigitaleafs.html">Why Digital Leafs?</a>
+                                </li>
+                                <li>
+                                    <a href="../views/pricing.html">Pricing</a>
+                                </li>
+                                <li>
+                                    <a href="#">Videos</a>
+                                </li>
+                                <li>
+                                    <a href="../views/contact.html">Contact</a>
+                                </li>
+                                <li>
+                                    <a href="../views/sign.html">Sign in</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-3">
+                        <div class="footer-info-presentation">
+                            <h4>Connect</h4>
+                            <ul>
+                                <li>
+                                    <a href="#">Twitter</a>
+                                </li>
+                                <li>
+                                    <a href="#">Facebook</a>
+                                </li>
+                                <li>
+                                    <a href="#">Instagram</a>
+                                </li>
+                                <li>
+                                    <a href="#">Linkedin</a>
+                                </li>
+                                <li>
+                                    <a href="#">YouTube</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-3">
+                        <div class="footer-info-presentation">
+                            <img src="../content/img/badge-light.png">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="last-footer">
+            <div class="last-footer-info">
+                <p>© 2020 Digital Leafs, All rights reserved.</p>
+            </div>
+              <div class="col-12 text-center">
+                            <ul>
+                                <li>
+                                    <a href="#">Terms of Service</a>
+                                </li>
+                                <li>
+                                    <a href="#">Privacy Policy</a>
+                                </li>
+                                <li>
+                                    <a href="#">Shipping Policy</a>
+                                </li>
+                                <li>
+                                    <a href="#">Refund, Return & Cancellation Policy</a>
+                                </li>
+                                <li>
+                                    <a href="#">Dispute Resolution</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+        </div>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(window).on("load", function () {
+            $(".load-icon").fadeOut();
+            $(".preloader").delay(350).fadeOut("slow");
+            $("body").delay(350).css({
+                "overflow": "visible"
+            });
+        });
+        </script>
+        <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+    <script>
+            $(window).scroll(function () {
+                          var sticky = $('.header-posi'),
+            scroll = $(window).scrollTop();
+
+                          if (scroll >= 100) {
+                sticky.addClass('active')
+            }
+            else {
+                sticky.removeClass('active');
+                          }
+                        });
+    </script>
+</body>
+
+</html>

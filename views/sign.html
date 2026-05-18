@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link
+    href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap"
+    rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.1/css/bootstrap.min.css">
+</head>
+<style>
+     * {
+    margin: 0px;
+    padding: 0px;
+}
+
+.preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #fff;
+    z-index: 9999;
+}
+
+.load-icon {
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.inner-header {
+    width: 95%;
+    margin: 0px auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 0px;
+}
+.header-posi{
+    width: 100%;
+    background-color: #fff;
+    top: -200px;
+    transition: 0.5s;
+    z-index: 100;
+    box-shadow: 0 3px 6px 0 rgb(25 25 25 / 50%);
+}
+.header-posi.active {
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+.max-width-header {
+    width: 80%;
+    margin: 0px auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo img {
+    width: 170px;
+    margin: 10px 0px;
+}
+
+.max-width-header ul {
+    display: flex;
+}
+
+.max-width-header ul li {
+    list-style: none;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.max-width-header ul li a {
+    text-decoration: none;
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #85c445;
+    border-bottom: 1px solid transparent;
+    font-weight: bold;
+    padding-bottom: 5px;
+}
+dl, ol, ul {
+    margin-top: 0;
+    margin-bottom: 0px !important; 
+}
+.menu-basic-all.menu-btn-login {
+    display: inline-block;
+    text-align: center;
+    line-height: 1;
+    cursor: pointer;
+    -webkit-appearance: none;
+    transition: background-color .25s ease-out, color .25s ease-out;
+    vertical-align: middle;
+    border-radius: 2em;
+    padding: 0px 0px;
+    padding-bottom: 6px;
+    margin: 0 0 0px;
+    font-size: 1rem;
+    background-color: #85c445;
+    border: 1px solid #a4ea5d;
+    margin-right: 0;
+    font-weight: 700;
+    transition: all .2s ease-out;
+}
+
+.menu-basic-all.menu-btn-login a {
+    font-size: 16px;
+    color: #fff;
+    font-weight: bold;
+    letter-spacing: 0.8px;
+}
+.main-login {
+    background-repeat: no-repeat;
+    background-position: 50%;
+    background-size: cover;
+    min-height: 100vh;
+    position: relative;
+    width: 100%;
+    z-index: 1;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url(../content/img/bg-home\ \(1\).jpg) center no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+.main-login:before {
+    position: absolute;
+    content: '';
+    background-image: linear-gradient(to right, #85c445d1, #85c148b0);
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+.login-signup-wrap {
+    background: #f4f7fa;
+    margin-top: 1.5rem!important;
+    margin-bottom: 1.5rem!important;
+    padding: 1.5rem!important;
+    padding-left: 3rem!important;
+    padding-right: 3rem!important;
+}
+button#btnLogin {
+    color: #fff;
+    -webkit-box-shadow: 0 20px 30px 0 rgb(67 37 204 / 20%);
+    box-shadow: 0 20px 30px 0 rgb(35 168 221 / 23%);
+    background: #85c445;
+    border: 2px solid #78ad42;
+    padding: 10px 25px;
+    font-family: 'Open Sans', sans-serif;
+    display: block;
+    width: 100%;
+    margin-top: 1.5rem!important;
+    margin-bottom: 1rem!important;
+    font-size: 1.25rem;
+    line-height: 1.5;
+}
+footer {
+    width: 100%;
+    background-color: #191919;
+}
+
+.footer-info {
+    display: flex;
+    padding: 40px 0px;
+    width: 80%;
+    margin: 0px auto;
+}
+
+
+
+.footer-info-presentation {
+    display: inline-block;
+    padding: 8px 0px;
+}
+
+.footer-info-presentation h6 {
+    color: #f5f5f5;
+    font-size: 25px;
+    margin-bottom: 21px;
+    font-weight: 600;
+}
+
+.footer-info-presentation ul {
+    padding: 0;
+    margin: 0;
+}
+
+
+
+.footer-info-presentation ul li a {
+    display: inline-block;
+    color: #f2f2f2;
+    display: inline-block;
+    font-weight: 100;
+    font-size: 20px;
+    padding-left: 0px;
+    text-decoration: none;
+}
+.footer-info-presentation ul li a:hover{
+    color: rgb(202, 116, 116);
+}
+.footer-info-presentation img {
+    width: 120px;
+}
+
+.footer-info-presentation p {
+    color: #f5f5f5;
+    font-size: 21px;
+    font-weight: 500;
+    padding: 15px;
+}
+
+div.left_img_wrap img {
+    width: 170px;
+}
+
+.last-footer {
+    background-color: rgb(17, 17, 17);
+    font-size: 0.75rem;
+    color: rgb(167, 167, 167);
+    padding: 1.25rem;
+}
+
+.last-footer h5 {
+    text-align: center;
+    font-size: 12px;
+}
+
+
+
+.last-footer ul li {
+    list-style: none;
+    font-weight:500;
+    font-size: 17px;
+    line-height: 1;
+    display: inline-block;
+    margin: 0px -5px;
+}
+
+.last-footer ul li a {
+    text-decoration: none;
+    display: inline-block;
+    font-size:13px;
+    color: rgb(167, 167, 167);
+    text-decoration: underline;
+    padding: 10px 20px;
+    align-items: center;
+}
+.last-footer ul li a:hover{
+    color: rgb(202, 116, 116);
+}
+
+
+
+
+footer {
+    background-color: #191919;
+}
+.footer-info {
+    display: flex;
+    padding: 45px 0px;
+    width: 100%;
+}
+.footer-info-presentation {
+    display: inline-block;
+}
+
+    .footer-info-presentation h4 {
+        color: #f5f5f5;
+        line-height:3;
+        font-size: 25px;
+        font-weight: 800;
+    }
+
+    .footer-info-presentation ul {
+        padding: 0;
+        margin: 0;
+    }
+
+.footer-info-presentation ul li {
+    list-style: none;
+    margin-bottom: 10px;
+}
+
+    .footer-info-presentation ul li span {
+        color: #fff;
+        font-size: 15px;
+        margin: 0px 5px;
+        font-weight: 500;
+    }
+
+.footer-info-presentation img {
+    width: 120px;
+}
+
+.footer-info-presentation p {
+    color: #f5f5f5;
+    font-size: 14px;
+    margin-top: 10px;
+    font-weight: 500;
+}
+
+div.left_img_wrap img {
+    width: 200px;
+    height: auto;
+    margin-top: 10px;
+    margin-bottom: 15px;
+}
+
+.last-footer {
+    background-color: rgb(17, 17, 17);
+    font-size: 18px;
+    color: #fff;
+    border-top: 1px solid #fff;
+    padding: 10px 0px;
+}
+
+    .last-footer p {
+        text-align: center;
+        color: rgb(167, 167, 167);
+        font-size: 15px;
+        font-weight: 400;
+    }
+    @media (max-width:1000px) {
+    .menu{
+       display: none;
+    }
+}
+@media (max-width:600px) {
+    .banner-text{
+        width: 100%;
+        padding: 50px 10px;
+    }
+    .banner-text h1{
+        font-size: 35px;
+    }
+    .banner-text p{
+        font-size: 20px;
+    }
+    .about-social-media-section img{
+ width: 300px;
+    }
+}
+</style>
+<body>
+    <div class="preloader">
+        <div class="load-icon">
+            <img src="../content/img/digitaleafs.gif">
+        </div>
+    </div>
+    
+<header>
+  <div class="header-posi">
+  <div class="max-width-header">
+      <div class="logo">
+          <img src="../content/img/logo.png">
+      </div>
+      <div class="menu">
+          <ul>
+            <li><a href="../views/index.html">Home</a></li>
+            <li><a href="../views/whydigitaleafs.html">Why Digital Leafs?</a></li>
+            <li><a href="../views/pricing.html">Princing</a></li>
+            <li><a href="../views/contact.html">Contact Us</a></li>
+            <li><a href="../views/demo.html">Demo</a></li>
+            <li class="menu-basic-all menu-btn-login">
+                <a href="../views/sign.html">Sign In</a>
+            </li>
+          </ul>
+      </div>
+  </div>
+  </div>
+</header>
+<div class="main-login">
+    <div class="container-fluid padding-con">
+        <div class="row align-items-center justify-content-center">
+            <div class="col-12 col-md-6 col-lg-6 col-xl-4">
+                <div class="login-signup-wrap">
+                    
+                    <!-- <div class="logo-wrp-digicard">
+                        <a href="javascript:void(0)">
+                            <img src="images/logo-dwd.png" class="logo-wrp-img"/>
+                        </a>
+                    </div> -->
+                                                                    <h3 class="login-sigup-title">Sign In</h3>
+                    
+                    <form method="post" action="https://digitaleafs.com/login">
+                    <input type="hidden" name="_token" value="WVC2QGpDdlvn4TZ6tXcJFk0NketjwqNpEWer0BRF">							<div class="login-signup-form">
+                            <div class="form-group">
+                                <label>Email Address</label>
+                                <div class="input-group">
+                                    <div class="input-icon">
+                                        <span class="fa fa-envelope color-primary"></span>
+                                    </div>
+                                    <input type="email" class="form-control" placeholder="name@yourdomain.com" name="email">
+                                </div>
+                            </div>
+                            
+                            
+                            <div class="form-group">
+                                <div class="container-fluid">
+                                    <div class="row">
+                                        <div class="col">
+                                            <label class="margin-leftss-label">Password</label>
+                                        </div>
+                                        <div class="col-auto text-right">
+                                            <a href="https://digitaleafs.com/forget-password" class="width-hunder-text-frgt">
+                                                Forgot password?
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="input-group">
+                                    <div class="input-icon">
+                                        <span class="fa fa-lock"></span>
+                                    </div>
+                                    <input type="password" class="form-control" placeholder="Enter your password" name="pass">
+                                </div>
+                            </div>
+
+                            <!-- Submit -->
+                            <button class="btn btn-sign-digicard" id="btnLogin">Sign in</button>
+                        </div>
+                        
+                        <!-- Link -->
+                        <p class="text-center text-sign-in-to-sign-up">
+                            <small class="text-muted text-center">
+                                Don't have an account yet? <a href="https://digitaleafs.com/sign-up">Sign up</a>.
+                            </small>
+                        </p>
+                    </form>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<footer>
+    <div class="footer-info">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12 col-sm-6 col-md-3">
+                    <div class="footer-info-presentation">
+                        <div class="left_img_wrap">
+                            <img src="../content/img/logo-footer-digital-leaf.png">
+                            <p>is part of</p>
+                            <img src="../content/img/digital-web-developers.png">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-6 col-md-3">
+                    <div class="footer-info-presentation">
+                        <h4>Learn More</h4>
+                        <ul>
+                            <li>
+                                <a href="#">About Us</a>
+                            </li>
+                            <li>
+                                <a href="../views/whydigitaleafs.html">Why Digital Leafs?</a>
+                            </li>
+                            <li>
+                                <a href="../views/pricing.html">Pricing</a>
+                            </li>
+                            <li>
+                                <a href="#">Videos</a>
+                            </li>
+                            <li>
+                                <a href="../views/contact.html">Contact</a>
+                            </li>
+                            <li>
+                                <a href="../views/sign.html">Sign in</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-6 col-md-3">
+                    <div class="footer-info-presentation">
+                        <h4>Connect</h4>
+                        <ul>
+                            <li>
+                                <a href="#">Twitter</a>
+                            </li>
+                            <li>
+                                <a href="#">Facebook</a>
+                            </li>
+                            <li>
+                                <a href="#">Instagram</a>
+                            </li>
+                            <li>
+                                <a href="#">Linkedin</a>
+                            </li>
+                            <li>
+                                <a href="#">YouTube</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-6 col-md-3">
+                    <div class="footer-info-presentation">
+                        <img src="../content/img/badge-light.png">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="last-footer">
+        <div class="last-footer-info">
+            <p>© 2020 Digital Leafs, All rights reserved.</p>
+        </div>
+          <div class="col-12 text-center">
+                        <ul>
+                            <li>
+                                <a href="#">Terms of Service</a>
+                            </li>
+                            <li>
+                                <a href="#">Privacy Policy</a>
+                            </li>
+                            <li>
+                                <a href="#">Shipping Policy</a>
+                            </li>
+                            <li>
+                                <a href="#">Refund, Return & Cancellation Policy</a>
+                            </li>
+                            <li>
+                                <a href="#">Dispute Resolution</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+    </div>
+</footer>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<script>
+    $(window).on("load", function () {
+        $(".load-icon").fadeOut();
+        $(".preloader").delay(350).fadeOut("slow");
+        $("body").delay(350).css({
+            "overflow": "visible"
+        });
+    });
+    </script>
+    <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+<script>
+        $(window).scroll(function () {
+                      var sticky = $('.header-posi'),
+        scroll = $(window).scrollTop();
+
+                      if (scroll >= 100) {
+            sticky.addClass('active')
+        }
+        else {
+            sticky.removeClass('active');
+                      }
+                    });
+</script>
+</body>
+</html>

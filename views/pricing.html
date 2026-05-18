@@ -1,0 +1,1092 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digitaleafs | Home Page by Shivani Negi</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css">
+<script src="https://kit.fontawesome.com/d0b1e3b290.js"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap"
+        rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.1/css/bootstrap.min.css">
+</head>
+<style>
+    * {
+    margin: 0px;
+    padding: 0px;
+}
+
+.preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #fff;
+    z-index: 9999;
+}
+
+.load-icon {
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.inner-header {
+    width: 95%;
+    margin: 0px auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 0px;
+}
+.header-posi{
+    width: 100%;
+    background-color: #fff;
+    top: -200px;
+    transition: 0.5s;
+    z-index: 100;
+    box-shadow: 0 3px 6px 0 rgb(25 25 25 / 50%);
+}
+.header-posi.active {
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+.max-width-header {
+    width: 80%;
+    margin: 0px auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo img {
+    width: 170px;
+    margin: 10px 0px;
+}
+
+.max-width-header ul {
+    display: flex;
+}
+
+.max-width-header ul li {
+    list-style: none;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.max-width-header ul li a {
+    text-decoration: none;
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #85c445;
+    border-bottom: 1px solid transparent;
+    font-weight: bold;
+    padding-bottom: 5px;
+}
+dl, ol, ul {
+    margin-top: 0;
+    margin-bottom: 0px !important; 
+}
+.menu-basic-all.menu-btn-login {
+    display: inline-block;
+    text-align: center;
+    line-height: 1;
+    cursor: pointer;
+    -webkit-appearance: none;
+    transition: background-color .25s ease-out, color .25s ease-out;
+    vertical-align: middle;
+    border-radius: 2em;
+    padding: 0px 0px;
+    padding-bottom: 6px;
+    margin: 0 0 0px;
+    font-size: 1rem;
+    background-color: #85c445;
+    border: 1px solid #a4ea5d;
+    margin-right: 0;
+    font-weight: 700;
+    transition: all .2s ease-out;
+}
+
+.menu-basic-all.menu-btn-login a {
+    font-size: 16px;
+    color: #fff;
+    font-weight: bold;
+    letter-spacing: 0.8px;
+}
+
+.banner {
+    background: url(../content/img/bg-pricing.jpg);
+    background-size: cover;
+    position: relative;
+}
+
+.banner:before {
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: #191919;
+    opacity: 0.4;
+    content: "";
+    position: absolute;
+}
+
+.banner-text {
+    padding: 160px 0;
+    padding-left: 5%;
+    width: 60%;
+    position: relative;
+    z-index: 3;
+}
+
+.banner-text h1 {
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 55px;
+    color: #fff;
+}
+
+.banner-text p {
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 100;
+    font-size: 30px;
+    color: #fff;
+    padding: 8px;
+}
+section.pricing-section {
+    padding: 80px 0px;
+}
+.title-pricing-page p {
+    font-size: 1.125rem;
+    line-height: 1.4;
+    font-weight: 100;
+    color: #191919;
+}
+.col-12.manage-wrp-shadow-box-pricing {
+    padding: 40px 20px 20px 20px;
+    margin-top: 40px;
+    box-shadow: 0 0 16px rgb(0 0 0 / 10%);
+}
+.manage-first-wrp-titles-all-pricing {
+    width: 40%;
+    float: left;
+    padding: 0px 15px;
+}
+.title-wrp-h3-pricing {
+    margin: 0px 0px 20px 0px;
+    padding: 0px 10px;
+}
+.title-wrp-h3-pricing h3 {
+    font-size: 24px;
+    text-align: left;
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 10px;
+    padding-bottom: 16px;
+}
+.comparision-price-item h4 {
+    font-size: 16px;
+    text-align: left;
+    margin-bottom: 0px;
+    padding: 16px 0px;
+    border-bottom: 1px solid #ccc;
+}
+
+.first-sliver-pricing-wrp, .first-gold-pricing-wrp, .first-platinum-pricing-wrp {
+    width: 30%;
+    float: left;
+}
+.title-wrp-h3-pricing {
+    margin: 0px 0px 20px 0px;
+    padding: 0px 10px;
+}
+.title-wrp-h3-pricing h3 {
+    font-size: 24px;
+    text-align: left;
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 10px;
+    padding-bottom: 16px;
+}
+.responsive-arrow-next-and-prev {
+    display: none;
+}
+a, a:visited {
+    transition: all .3s ease-in;
+}
+.fa {
+    display: inline-block;
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+.camparing-with-all-manage-pricing {
+    margin-bottom: 0px;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 10px;
+}
+.camparing-with-all-manage-pricing span {
+    font-size: 21px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    display: block;
+}
+.col-12.manage-enterprise-price {
+    padding: 30px 20px 40px 20px;
+    margin-top: 80px;
+    box-shadow: 0 0 16px rgb(0 0 0 / 10%);
+}
+.title-wrp-h3-pricing {
+    margin: 0px 0px 20px 0px;
+    padding: 0px 10px;
+}
+.col-12.manage-enterprise-price h3 {
+    text-align: center;
+}
+.title-wrp-h3-pricing h3 {
+    font-size: 24px;
+    text-align: left;
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 10px;
+    padding-bottom: 16px;
+}
+.camparing-with-all-manage-pricing-enterprice {
+    font-size: 20px;
+    text-align: center;
+    margin-bottom: 0px;
+    padding: 0px 0px 10px 0px;
+    color: #333;
+}
+
+.button-manage-wrp-submit-forms-enterprice {
+    margin-top: 32px;
+}
+.camparing-with-all-manage-pricing i.fa.fa-times {
+    color: red;
+}
+.camparing-with-all-manage-pricing i {
+    display: block;
+    padding-top: 15px;
+    padding-bottom: 6px;
+    font-size: 20px;
+    color: #636363;
+}
+.button-manage-wrp-submit-forms {
+    margin-top: 30px;
+    margin-bottom: 10px;
+}
+button.btn-pricing-select-plan:hover {
+    background: white;
+    color: #85c445;
+}
+section.subscription-features-section {
+    background: #f2f2f2;
+    padding: 5rem 0;
+}
+.title-subcription-pricing-pg {
+    padding-top: 1.25rem;
+    padding-bottom: 1.25rem;
+}
+.title-subcription-pricing-pg h3 {
+    line-height: 1.2;
+    font-size: 2.25rem;
+    margin-bottom: 0;
+}
+.subscription-items-pricing-pg {
+    text-align: center;
+    padding-top: 1.25rem;
+    padding-bottom: 1.25rem;
+}
+.subscription-items-pricing-pg img {
+    max-width: 70px;
+    margin-bottom: 1.875rem;
+}
+.subscription-items-pricing-pg h3 {
+    font-size: 1.5rem;
+    line-height: 1.2;
+}
+.subscription-items-pricing-pg p {
+    font-weight: 100;
+    font-size: 1.125rem;
+    line-height: 1.4;
+    margin-bottom: 0px;
+}
+button.btn-pricing-select-plan {
+    border: 1px solid #85c445;
+    background: #85c445;
+    color: #fff;
+    padding: 7px 30px;
+    border-radius: 4px;
+    font-size: 16px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+    word-spacing: 1px;
+    box-shadow: 4px 1px 16px #85c44545;
+    cursor: pointer;
+    transition: 0.3s all ease-in-out;
+    -moz-transition: 0.3s all ease-in-out;
+    -webkit-transition: 0.3s all ease-in-out;
+}
+section.try-digital-leaf-section {
+    padding: 5rem 0;
+    background: #fff;
+}
+.digital-leaf-img-pricing-pg {
+    padding: 1.25rem;
+    text-align: center;
+}
+.try-today-pricing-pg h2 {
+    font-size: 2.25rem;
+}
+.try-today-pricing-pg p {
+    font-weight: 100;
+    font-size: 22px;
+}
+a.btn.btn-try-today {
+    border: 1px solid #85c445;
+    color: #85c445;
+    border-radius: 2em;
+    padding: 1em 2em;
+    margin: 0 0 1rem;
+    font-size: 1rem;
+    font-weight: 600;
+    display: inline-block;
+    text-align: center;
+    line-height: 1;
+    margin-top: 1rem;
+}
+footer {
+    width: 100%;
+    background-color: #191919;
+}
+
+.footer-info {
+    display: flex;
+    padding: 40px 0px;
+    width: 80%;
+    margin: 0px auto;
+}
+
+
+
+.footer-info-presentation {
+    display: inline-block;
+    padding: 8px 0px;
+}
+
+.footer-info-presentation h6 {
+    color: #f5f5f5;
+    font-size: 25px;
+    margin-bottom: 21px;
+    font-weight: 600;
+}
+
+.footer-info-presentation ul {
+    padding: 0;
+    margin: 0;
+}
+
+
+
+.footer-info-presentation ul li a {
+    display: inline-block;
+    color: #f2f2f2;
+    display: inline-block;
+    font-weight: 100;
+    font-size: 20px;
+    padding-left: 0px;
+    text-decoration: none;
+}
+.footer-info-presentation ul li a:hover{
+    color: rgb(202, 116, 116);
+}
+.footer-info-presentation img {
+    width: 120px;
+}
+
+.footer-info-presentation p {
+    color: #f5f5f5;
+    font-size: 21px;
+    font-weight: 500;
+    padding: 15px;
+}
+
+div.left_img_wrap img {
+    width: 170px;
+}
+
+.last-footer {
+    background-color: rgb(17, 17, 17);
+    font-size: 0.75rem;
+    color: rgb(167, 167, 167);
+    padding: 1.25rem;
+}
+
+.last-footer h5 {
+    text-align: center;
+    font-size: 12px;
+}
+
+
+
+.last-footer ul li {
+    list-style: none;
+    font-weight:500;
+    font-size: 17px;
+    line-height: 1;
+    display: inline-block;
+    margin: 0px -5px;
+}
+
+.last-footer ul li a {
+    text-decoration: none;
+    display: inline-block;
+    font-size:13px;
+    color: rgb(167, 167, 167);
+    text-decoration: underline;
+    padding: 10px 20px;
+    align-items: center;
+}
+.last-footer ul li a:hover{
+    color: rgb(202, 116, 116);
+}
+
+
+
+
+footer {
+    background-color: #191919;
+}
+.footer-info {
+    display: flex;
+    padding: 45px 0px;
+    width: 100%;
+}
+.footer-info-presentation {
+    display: inline-block;
+}
+
+    .footer-info-presentation h4 {
+        color: #f5f5f5;
+        line-height:3;
+        font-size: 25px;
+        font-weight: 800;
+    }
+
+    .footer-info-presentation ul {
+        padding: 0;
+        margin: 0;
+    }
+
+.footer-info-presentation ul li {
+    list-style: none;
+    margin-bottom: 10px;
+}
+
+    .footer-info-presentation ul li span {
+        color: #fff;
+        font-size: 15px;
+        margin: 0px 5px;
+        font-weight: 500;
+    }
+
+.footer-info-presentation img {
+    width: 120px;
+}
+
+.footer-info-presentation p {
+    color: #f5f5f5;
+    font-size: 14px;
+    margin-top: 10px;
+    font-weight: 500;
+}
+
+div.left_img_wrap img {
+    width: 200px;
+    height: auto;
+    margin-top: 10px;
+    margin-bottom: 15px;
+}
+
+.last-footer {
+    background-color: rgb(17, 17, 17);
+    font-size: 18px;
+    color: #fff;
+    border-top: 1px solid #fff;
+    padding: 10px 0px;
+}
+
+    .last-footer p {
+        text-align: center;
+        color: rgb(167, 167, 167);
+        font-size: 15px;
+        font-weight: 400;
+    }
+    @media (max-width:1000px) {
+    .menu{
+       display: none;
+    }
+}
+@media (max-width:600px) {
+    .banner-text{
+        width: 100%;
+        padding: 50px 10px;
+    }
+    .banner-text h1{
+        font-size: 35px;
+    }
+    .banner-text p{
+        font-size: 20px;
+    }
+    .about-social-media-section img{
+ width: 300px;
+    }
+}
+</style>
+<body>
+    <div class="preloader">
+        <div class="load-icon">
+            <img src="../content/img/digitaleafs.gif">
+        </div>
+    </div>
+    
+<header>
+  <div class="header-posi">
+  <div class="max-width-header">
+      <div class="logo">
+          <img src="../content/img/logo.png">
+      </div>
+      <div class="menu">
+          <ul>
+            <li><a href="../views/index.html">Home</a></li>
+            <li><a href="../views/whydigitaleafs.html">Why Digital Leafs?</a></li>
+            <li><a href="../views/pricing.html">Princing</a></li>
+            <li><a href="../views/contact.html">Contact Us</a></li>
+            <li><a href="../views/demo.html">Demo</a></li>
+            <li class="menu-basic-all menu-btn-login">
+                <a href="../views/sign.html">Sign In</a>
+            </li>
+          </ul>
+      </div>
+  </div>
+  </div>
+</header>
+    <div class="banner">
+        <div class="banner-text">
+            <h1>Digitaleafs pricing guide.</h1>
+            <p>Looking for a Digital Business Card? We have you covered from start to finish.</p>
+        </div>
+    </div>
+    <section class="pricing-section">
+        <div class="container">
+            
+            <div class="row justify-content-center align-center text-center">
+                <div class="col-12 col-md-10 col-lg-8">
+                    <div class="title-pricing-page">
+                        <h2>Digital Leaf's Digital Business Cards</h2>
+                        <p>Affordable Pricing and Packages — the Digital Business Card platform trusted by professionals worldwide.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row text-center">
+                
+                <div class="col-12 manage-wrp-shadow-box-pricing">
+                    
+                    <div class="manage-first-wrp-titles-all-pricing">
+                        
+                        <div class="title-wrp-h3-pricing">
+                            <h3>Plan Features</h3>
+                        </div>
+                        
+                        <div class="comparision-price-item">
+                            <h4>Card Storage</h4>
+                        </div>
+                        
+                        <div class="comparision-price-item">
+                            <h4>Edit Details</h4>
+                        </div>
+                        
+                        <div class="comparision-price-item">
+                            <h4>Company Details</h4>
+                        </div>
+                        
+                        <div class="comparision-price-item">
+                            <h4>Images / Portfolio</h4>
+                        </div>
+                        
+                        <div class="comparision-price-item">
+                            <h4>Services / Products</h4>
+                        </div>
+                        
+                        <div class="comparision-price-item">
+                            <h4>Videos</h4>
+                        </div>
+                        
+                        <div class="comparision-price-item">
+                            <h4>Documents / Attachments</h4>
+                        </div>
+                        
+                        <div class="comparision-price-item">
+                            <h4>Theme Selection</h4>
+                        </div>
+                        
+                        <div class="comparision-price-item">
+                            <h4>Payment Link</h4>
+                        </div>
+                        
+                        <div class="comparision-price-item">
+                            <h4>Click to Call</h4>
+                        </div>
+                        
+                        <div class="comparision-price-item">
+                            <h4>Click to Share</h4>
+                        </div>
+                        
+                        <div class="comparision-price-item">
+                            <h4>Click to E-Mail</h4>
+                        </div>
+                        
+                        <div class="comparision-price-item">
+                            <h4>Click to Navigate</h4>
+                        </div>
+                        
+                        <div class="comparision-price-item">
+                            <h4>Click to WhatsApp</h4>
+                        </div>
+                        
+                        <div class="comparision-price-item">
+                            <h4>Share Via Social Media</h4>
+                        </div>
+                        
+                        <div class="comparision-price-item">
+                            <h4>Share Via Message</h4>
+                        </div>
+                        
+                        <div class="comparision-price-item">
+                            <h4>Share Via E-Mail</h4>
+                        </div>
+                        
+                        <div class="comparision-price-item">
+                            <h4>Unlimited Shares</h4>
+                        </div>
+                        
+                        <div class="comparision-price-item">
+                            <h4>Enquiry to E-Mail</h4>
+                        </div>
+                        
+                        <div class="comparision-price-item">
+                            <h4>Manage Leads</h4>
+                        </div>
+                        
+                    </div><!--- Plan Features End--->
+                    
+                    
+                    <div class="first-sliver-pricing-wrp">
+                        <div class="title-wrp-h3-pricing">
+                            <h3>Silver Plan</h3>
+                            <div class="responsive-arrow-next-and-prev silver">
+                                <a href="javascript:void(0)" class="next-in-gold-prc">View Platinum Plan  <i class="fa fa-angle-right"></i> </a>
+                                <div class="clearfix"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="camparing-with-all-manage-pricing">
+                            <span>1</span>
+                        </div>
+                        
+                        <div class="camparing-with-all-manage-pricing">
+                            <i class="fa fa-times"></i>
+                        </div>
+                        
+                        
+                        <div class="camparing-with-all-manage-pricing">
+                            <i class="fa fa-times"></i>
+                        </div>
+                        
+                        <div class="camparing-with-all-manage-pricing">
+                            <i class="fa fa-times"></i>
+                        </div>
+                        
+                        <div class="camparing-with-all-manage-pricing">
+                            <i class="fa fa-times"></i>
+                        </div>
+                        
+                        <div class="camparing-with-all-manage-pricing">
+                            <i class="fa fa-times"></i>
+                        </div>
+                        
+                        <div class="camparing-with-all-manage-pricing">
+                            <i class="fa fa-times"></i>
+                        </div>
+                        
+                        <div class="camparing-with-all-manage-pricing">
+                            <i class="fa fa-times"></i>
+                        </div>
+                        
+                        <div class="camparing-with-all-manage-pricing">
+                            <i class="fa fa-times"></i>
+                        </div>
+                        
+                        <div class="camparing-with-all-manage-pricing">
+                            <i class="fa fa-check"></i>
+                        </div>
+                        
+                        <div class="camparing-with-all-manage-pricing">
+                            <i class="fa fa-check"></i>
+                        </div>
+                        
+                        <div class="camparing-with-all-manage-pricing">
+                            <i class="fa fa-check"></i>
+                        </div>
+                        
+                        <div class="camparing-with-all-manage-pricing">
+                            <i class="fa fa-check"></i>
+                        </div>
+                        
+                        <div class="camparing-with-all-manage-pricing">
+                            <i class="fa fa-check"></i>
+                        </div>
+                        
+                        <div class="camparing-with-all-manage-pricing">
+                            <i class="fa fa-check"></i>
+                        </div>
+                        
+                        <div class="camparing-with-all-manage-pricing">
+                            <i class="fa fa-check"></i>
+                        </div>
+                        
+                        <div class="camparing-with-all-manage-pricing">
+                            <i class="fa fa-check"></i>
+                        </div>
+                        
+                        <div class="camparing-with-all-manage-pricing">
+                            <i class="fa fa-check"></i>
+                        </div>
+                        
+                        <div class="camparing-with-all-manage-pricing">
+                            <i class="fa fa-times"></i>
+                        </div>
+                        
+                        <div class="camparing-with-all-manage-pricing">
+                            <i class="fa fa-times"></i>
+                        </div>
+                        
+                        
+                        <div class="button-manage-wrp-submit-forms">
+                            <button type="submit" class="btn-pricing-select-plan enq" id="999">INR 999 (1 Year)
+                            <br>
+                            Buy Now</button><br><br>
+                            <!--<form><script src="https://checkout.razorpay.com/v1/payment-button.js" data-payment_button_id="pl_HT1Fn5reHCNkrv" async> </script> </form>-->
+                        </div>
+                        
+                        
+                    </div><!--- Plan Silver End--->
+                    
+                    
+                    <div class="first-platinum-pricing-wrp">
+                        <div class="title-wrp-h3-pricing">
+                            <h3>Platinum Plan</h3>
+                            <div class="responsive-arrow-next-and-prev platinum">
+                                <a href="javascript:void(0)" class="prev-in-plat-prc"> <i class="fa fa-angle-left"></i> View Silver Plan</a>
+                                <div class="clearfix"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="camparing-with-all-manage-pricing">
+                            <span>1</span>
+                        </div>
+                        
+                        <div class="camparing-with-all-manage-pricing">
+                            <i class="fa fa-check"></i>
+                        </div>
+                        
+                        <div class="camparing-with-all-manage-pricing">
+                            <i class="fa fa-check"></i>
+                        </div>
+                        
+                        <div class="camparing-with-all-manage-pricing">
+                            <span>15</span>
+                        </div>
+                        
+                        <div class="camparing-with-all-manage-pricing">
+                            <span>15</span>
+                        </div>
+                        
+                        <div class="camparing-with-all-manage-pricing">
+                            <span>6</span>
+                        </div>
+                        
+                        <div class="camparing-with-all-manage-pricing">
+                            <span>3</span>
+                        </div>
+                        
+                        <div class="camparing-with-all-manage-pricing">
+                            <i class="fa fa-check"></i>
+                        </div>
+                        
+                        <div class="camparing-with-all-manage-pricing">
+                            <i class="fa fa-check"></i>
+                        </div>
+                        
+                        <div class="camparing-with-all-manage-pricing">
+                            <i class="fa fa-check"></i>
+                        </div>
+                        
+                        <div class="camparing-with-all-manage-pricing">
+                            <i class="fa fa-check"></i>
+                        </div>
+                        
+                        <div class="camparing-with-all-manage-pricing">
+                            <i class="fa fa-check"></i>
+                        </div>
+                        
+                        <div class="camparing-with-all-manage-pricing">
+                            <i class="fa fa-check"></i>
+                        </div>
+                        
+                        <div class="camparing-with-all-manage-pricing">
+                            <i class="fa fa-check"></i>
+                        </div>
+                        
+                        <div class="camparing-with-all-manage-pricing">
+                            <i class="fa fa-check"></i>
+                        </div>
+                        
+                        <div class="camparing-with-all-manage-pricing">
+                            <i class="fa fa-check"></i>
+                        </div>
+                        
+                        <div class="camparing-with-all-manage-pricing">
+                            <i class="fa fa-check"></i>
+                        </div>
+                        
+                        <div class="camparing-with-all-manage-pricing">
+                            <i class="fa fa-check"></i>
+                        </div>
+                        
+                        <div class="camparing-with-all-manage-pricing">
+                            <i class="fa fa-check"></i>
+                        </div>
+                        
+                        <div class="camparing-with-all-manage-pricing">
+                            <i class="fa fa-check"></i>
+                        </div>
+                        
+                        <div class="button-manage-wrp-submit-forms">
+                            <button type="submit" class="btn-pricing-select-plan enq" id="1999">INR 1999 (1 Year) <br>
+                            Buy Now</button><br><br>
+                            <!--<form><script src="https://checkout.razorpay.com/v1/payment-button.js" data-payment_button_id="pl_HT1Fn5reHCNkrv" async> </script> </form>-->
+                        </div>
+                    </div><!--- Plan Platinum End--->
+                    
+                    <div class="clearfix"></div>
+                        
+                </div>
+                
+                
+                <div class="col-12 manage-enterprise-price">
+                    
+                    
+                    <div class="first-enterprise-pricing-wrp">
+                        <div class="title-wrp-h3-pricing">
+                            <h3>Enterprise Custom Solutions</h3>
+                        </div>
+                    
+                        <div class="camparing-with-all-manage-pricing-enterprice">
+                            <span>Everything in the Platinum Pack + Customised features based on your requirement.</span>
+                        </div>
+                        
+                        <div class="camparing-with-all-manage-pricing-enterprice">
+                            <span>Take your sales, service, and marketing to new levels with a custom solutions.</span>
+                        </div>
+                        
+                        <div class="button-manage-wrp-submit-forms-enterprice">
+                            <button type="submit" class="btn-pricing-select-plan">Contact for Pricing</button>
+                        </div>
+                        
+                    </div><!--- Plan Enterprise End--->
+                </div>
+                
+            </div>
+            
+        </div>
+    </section>
+    <section class="subscription-features-section">
+        <div class="container">
+            
+            <div class="row text-center justify-content-center">
+                <div class="col-12 col-md-10 col-lg-8">
+                    <div class="title-subcription-pricing-pg ">
+                        <h3>Enterprise Customised Features</h3>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row manage-subscription-items">
+                
+                <div class="col-12 col-sm-6 subscription-items-pricing-pg">
+                    <img src="../content/img/subscription-item-3.png" />
+                    <h3>CRM Integration</h3>
+                    <p style="font-size: 1.125rem;">Sync contacts from Digital Card into ZOHO, SugarCRM, HubSpot and Salesforce etc. Automatically import enriched contact data — like name, phone, fax, email, title, company, address, website and descriptions.</p>
+                </div>
+                
+                
+                <div class="col-12 col-sm-6 subscription-items-pricing-pg">
+                    <img src="../content/img/subscription-item-4.png" />
+                    <h3>Custom Branding</h3>
+                    <p style="font-size: 1.125rem;">Create elegant Digital Business Cards that truly reflect your brand by incorporating your company colors, video, images, social links, web URLs, contact details and greeting message.</p>
+                </div>
+                
+            </div>
+            
+        </div>
+    </section>
+    <section>
+        <section class="try-digital-leaf-section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 text-center">
+                        <div class="digital-leaf-img-pricing-pg">
+                            <img src="../content/img/logo.png" alt="digital leaf">
+                        </div>
+                        <div class="try-today-pricing-pg text-center">
+                            <h2>Professional Enterprise Pack</h2>
+                            <p>Everything in the Platinum Pack + Customised features based on your requirement.</p>
+                            <a href="#" class="btn btn-try-today">For More Information CALL US at +91 9899852245</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    
+        <footer>
+            <div class="footer-info">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-6 col-md-3">
+                            <div class="footer-info-presentation">
+                                <div class="left_img_wrap">
+                                    <img src="../content/img/logo-footer-digital-leaf.png">
+                                    <p>is part of</p>
+                                    <img src="../content/img/digital-web-developers.png">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-6 col-md-3">
+                            <div class="footer-info-presentation">
+                                <h4>Learn More</h4>
+                                <ul>
+                                    <li>
+                                        <a href="#">About Us</a>
+                                    </li>
+                                    <li>
+                                        <a href="../views/whydigitaleafs.html">Why Digital Leafs?</a>
+                                    </li>
+                                    <li>
+                                        <a href="../views/pricing.html">Pricing</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Videos</a>
+                                    </li>
+                                    <li>
+                                        <a href="../views/contact.html">Contact</a>
+                                    </li>
+                                    <li>
+                                        <a href="../views/sign.html">Sign in</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-6 col-md-3">
+                            <div class="footer-info-presentation">
+                                <h4>Connect</h4>
+                                <ul>
+                                    <li>
+                                        <a href="#">Twitter</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Facebook</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Instagram</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Linkedin</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">YouTube</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-6 col-md-3">
+                            <div class="footer-info-presentation">
+                                <img src="../content/img/badge-light.png">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="last-footer">
+                <div class="last-footer-info">
+                    <p>© 2020 Digital Leafs, All rights reserved.</p>
+                </div>
+                  <div class="col-12 text-center">
+                                <ul>
+                                    <li>
+                                        <a href="#">Terms of Service</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Privacy Policy</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Shipping Policy</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Refund, Return & Cancellation Policy</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Dispute Resolution</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+            </div>
+        </footer>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <script>
+        $(window).on("load", function () {
+            $(".load-icon").fadeOut();
+            $(".preloader").delay(350).fadeOut("slow");
+            $("body").delay(350).css({
+                "overflow": "visible"
+            });
+        });
+        </script>
+        <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+    <script>
+            $(window).scroll(function () {
+                          var sticky = $('.header-posi'),
+            scroll = $(window).scrollTop();
+
+                          if (scroll >= 100) {
+                sticky.addClass('active')
+            }
+            else {
+                sticky.removeClass('active');
+                          }
+                        });
+    </script>
